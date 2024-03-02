@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+<div class="container-fluid my-4 px-0">
+    <img class="d-block w-100" src="https://source.unsplash.com/1200x200/?phone,contact" alt="First slide">    
+</div>
+<div class="container"> 
+    <h3 class="text-center"> contact us</h3>
+<form method="post" action="/contact">
+
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Your good name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp"  name="name" placeholder="Enter your name">
+      
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+    </div>
+   
+   
+    <div class="form-group">
+        <label for="phone">Your contact number</label>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="phone">
+      </div>
+
+    <div class="form-group">
+        <label for="desc">Tell me how can i help you...</label>
+        <input type="desc" class="form-control" id="desc" rows="3" placeholder="............">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock body %}
